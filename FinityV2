@@ -93,7 +93,7 @@ finity.dark_theme = { -- dark
 	scrollbar_color = Color3.fromRGB(118, 118, 121),
 }
 
-finity.reallydark_theme = {
+finity.reallydark_theme = { -- really dark
 	main_container = Color3.fromRGB(0, 0, 0),
 	separator_color = Color3.fromRGB(63, 63, 65),
 
@@ -186,9 +186,9 @@ function finity.new(themename, gprojectName, thinProject)
 	local projectName = false
 	local thinMenu = false
 	
-    if string.lower(themename) == "light" then theme = finity.light_theme
-	if string.lower(themename) == "dark" then theme = finity.dark_theme
-    if string.lower(themename) == "reallydark" then theme = finity.reallydark_theme
+    if string.lower(themename) == "light" then theme = finity.light_theme end
+	if string.lower(themename) == "dark" then theme = finity.dark_theme end
+    if string.lower(themename) == "reallydark" then theme = finity.reallydark_theme end
 	if gprojectName then projectName = gprojectName end
 	if thinProject then thinMenu = thinProject end
 	
