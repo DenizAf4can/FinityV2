@@ -9,12 +9,12 @@
 	Source:
 		https://github.com/DenizAf4can/FinityV2/blob/main/FinityV2
 	Version:
-     2.0.0
+	     2.0.1
 	Date: 
 		December 6th, 2022
 	Author: 
 		Deniz Afacan
-        https://github.com/DenizAf4can
+		https://github.com/DenizAf4can
 --]]
 
 if game.CoreGui:FindFirstChild("FinityUI") then
