@@ -1,5 +1,5 @@
 --[[
-	 ______ _____ _   _ _____ _________     __	            ________
+	 ______ _____ _   _ _____ _________     __	    		________
 	|  ____|_   _| \ | |_   _|__   __\ \   / / 	           |_____   |
 	| |__    | | |  \| | | |    | |   \ \_/ /  	 __     __      /  /
 	|  __|   | | | . ` | | |    | |    \   /   	 \ \   / /    /  /
@@ -9,16 +9,114 @@
 	Source:
 		https://github.com/DenizAf4can/FinityV2/blob/main/FinityV2
 	Version:
-		2.0.1
+     2.0.0
 	Date: 
 		December 6th, 2022
 	Author: 
 		Deniz Afacan
-		https://github.com/DenizAf4can
+        https://github.com/DenizAf4can
 --]]
 
-if game.CoreGui:FindFirstChild("FinityUI") then
-	game.CoreGui.FinityUI:Destroy()
+getgenv().FinityUIv2Custom = {
+	main_container = Color3.fromRGB(249, 249, 255)
+	main_containerimage = ""
+	separator_color = Color3.fromRGB(223, 219, 228)
+	text_color = Color3.fromRGB(96, 96, 96)
+	category_button_background = Color3.fromRGB(223, 219, 228)
+	category_button_border = Color3.fromRGB(200, 196, 204)
+	checkbox_checked = Color3.fromRGB(114, 214, 112)
+	checkbox_outer = Color3.fromRGB(198, 189, 202)
+	checkbox_inner = Color3.fromRGB(249, 239, 255)
+	slider_color = Color3.fromRGB(114, 214, 112)
+	slider_color_sliding = Color3.fromRGB(114, 214, 112)
+	slider_background = Color3.fromRGB(198, 188, 202)
+	slider_text = Color3.fromRGB(112, 112, 112)
+	textbox_background = Color3.fromRGB(198, 189, 202)
+	textbox_background_hover = Color3.fromRGB(215, 206, 227)
+	textbox_text = Color3.fromRGB(112, 112, 112)
+	textbox_text_hover = Color3.fromRGB(50, 50, 50)
+	textbox_placeholder = Color3.fromRGB(178, 178, 178)
+	dropdown_background = Color3.fromRGB(198, 189, 202)
+	dropdown_text = Color3.fromRGB(112, 112, 112)
+	dropdown_text_hover = Color3.fromRGB(50, 50, 50)
+	dropdown_scrollbar_color = Color3.fromRGB(198, 189, 202)
+	button_background = Color3.fromRGB(198, 189, 202)
+	button_background_hover = Color3.fromRGB(215, 206, 227)
+	button_background_down = Color3.fromRGB(178, 169, 182)
+	scrollbar_color = Color3.fromRGB(198, 189, 202)
+}
+
+local listofuiplacement = {
+	"main_container",
+	"main_containerimage",
+	"seperator_color",
+	"text_color",
+	"category_button_background",
+	"category_button_border",
+	"checkbox_checked",
+	"checkbox_outer",
+	"checkbox_inner",
+	"slider_color",
+	"slider_color_sliding",
+	"slider_background",
+	"slider_text",
+	"texbox_Background",
+	"textbox_background_hover",
+	"textbox_text",
+	"textbox_text_hover",
+	"textbox_placeholder",
+	"dropdown_background",
+	"dropdown_text",
+	"dropdown_text_hover",
+	"dropdown_scrollbar_color",
+	"button_background",
+	"button_background_hover",
+	"button_background_down",
+	"scrollbar_color",
+}
+
+local filename = "FinityUI v2.lua"
+
+function loadSettings()
+	print("Loading Settings")
+	local HttpService = game:GetService("HttpService");
+	if (readfile and isfile and isfile(filename)) then
+		getgenv().FinityUIv2Custom = HttpService:JSONDecode(readfile(filename));
+	else
+		print("File Not Found")	
+	end
+end
+
+function saveSettings()
+	local Logsz;
+	local HttpService = game:GetService("HttpService");
+	if (writefile) then
+		Logsz = HttpService:JSONEncode(FinityUIv2Custom);
+		writefile(filename, Logsz)
+	else
+		print("Windows Rejected Save Request")
+	end
+end
+
+loadSettings()
+
+function startup()
+	local pnewplist = {}
+	for i,v in pairs(FinityUIv2Custom) do
+		pnewplist[i] = v
+	end
+	if game.CoreGui:FindFirstChild("FinityUI") then 
+		game.CoreGui.FinityUI:Destroy()
+	end
+	for i,v in pairs(listofuiplacement) do
+		if game.Workspace:FindFirstChild(v) then
+			v:Destroy()
+		else
+			local asdasdqw = Instance.new("Color3Value", game.Workspace)
+			asdasdqw.Name = v
+			asdasdqw.Value = 0,0,0
+		end
+	end
 end
 
 local finity = {}
@@ -175,6 +273,43 @@ finity.blueforest_theme = { -- blueforest
 finity.whitegalaxy_theme = { -- whitegalaxy
 	main_container = Color3.fromRGB(0, 0, 0),
 	main_containerimage = "http://www.roblox.com/asset/?id=11785111194",
+	separator_color = Color3.fromRGB(63, 63, 65),
+
+	text_color = Color3.fromRGB(206, 206, 206),
+
+	category_button_background = Color3.fromRGB(63, 62, 65),
+	category_button_border = Color3.fromRGB(72, 71, 74),
+
+	checkbox_checked = Color3.fromRGB(132, 255, 130),
+	checkbox_outer = Color3.fromRGB(120, 120, 120),
+	checkbox_inner = Color3.fromRGB(132, 132, 136),
+
+	slider_color = Color3.fromRGB(177, 177, 177),
+	slider_color_sliding = Color3.fromRGB(132, 255, 130),
+	slider_background = Color3.fromRGB(88, 84, 90),
+	slider_text = Color3.fromRGB(177, 177, 177),
+
+	textbox_background = Color3.fromRGB(103, 103, 106),
+	textbox_background_hover = Color3.fromRGB(137, 137, 141),
+	textbox_text = Color3.fromRGB(195, 195, 195),
+	textbox_text_hover = Color3.fromRGB(232, 232, 232),
+	textbox_placeholder = Color3.fromRGB(135, 135, 138),
+
+	dropdown_background = Color3.fromRGB(88, 88, 91),
+	dropdown_text = Color3.fromRGB(195, 195, 195),
+	dropdown_text_hover = Color3.fromRGB(232, 232, 232),
+	dropdown_scrollbar_color = Color3.fromRGB(118, 118, 121),
+	
+	button_background = Color3.fromRGB(103, 103, 106),
+	button_background_hover = Color3.fromRGB(137, 137, 141),
+	button_background_down = Color3.fromRGB(70, 70, 81),
+	
+	scrollbar_color = Color3.fromRGB(118, 118, 121),
+}
+
+finity.custom_theme = {
+	main_container = Color3.fromRGB(255, 255, 255),
+	main_containerimage = "",
 	separator_color = Color3.fromRGB(63, 63, 65),
 
 	text_color = Color3.fromRGB(206, 206, 206),
@@ -1093,10 +1228,21 @@ function finity.new(themename, gprojectName, thinProject)
 							
 							return removed
 						end
+
+						function cheat:RemoveOptionAll()
+							options = {}
+							refreshOptions()
+							return removed
+						end
 						
 						function cheat:AddOption(value)
 							table.insert(options, value)
 							
+							refreshOptions()
+						end
+
+						function cheat:AddOptions(values)
+							options = values
 							refreshOptions()
 						end
 						
