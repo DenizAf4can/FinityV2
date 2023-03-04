@@ -17,6 +17,10 @@
         https://github.com/DenizAf4can
 --]]
 
+if game.CoreGui:FindFirstChild("FinityUI") then
+	game.CoreGui.FinityUI:Destroy()
+end
+
 getgenv().FinityUIv2Custom = {
 	main_container = Color3.fromRGB(249, 249, 255),
 	main_containerimage = "",
