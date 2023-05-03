@@ -1166,7 +1166,11 @@ function finity.new(themename, gprojectName, thinProject)
 										end
 										local texitii = ""
 										for i,v in pairs(cheat.value) do
-											texitii = texitii..v..", "
+											if texitii == "" then
+												texitii = v
+											else
+												texitii = texitii..", "..v
+											end
 										end
 										cheat.selected.Text = texitii
 	
