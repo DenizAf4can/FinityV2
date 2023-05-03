@@ -1162,7 +1162,7 @@ function finity.new(themename, gprojectName, thinProject)
 										end
 										local texitii = ""
 										for i,v in pairs(cheat.value) do
-											texitii = texitii+", "v
+											texitii = texitii..v..", "
 										end
 										cheat.selected.Text = texitii
 	
