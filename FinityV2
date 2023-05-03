@@ -1053,7 +1053,7 @@ function finity.new(themename, gprojectName, thinProject)
 						cheat.arrowpreview.Parent = cheat.hsvbar
 					elseif string.lower(kind) == "multipledropdown" then
 						if data then
-							cheat.value = {"None"}
+							cheat.value = {}
 						end
 						
 						local options
@@ -1086,7 +1086,7 @@ function finity.new(themename, gprojectName, thinProject)
 							Size = UDim2.new(1, -35, 1, 0),
 							ZIndex = 2,
 							Font = Enum.Font.Gotham,
-							Text = tostring(cheat.value[0]),
+							Text = "None",
 							TextColor3 = theme.dropdown_text,
 							TextSize = 13,
 							TextXAlignment = Enum.TextXAlignment.Left
