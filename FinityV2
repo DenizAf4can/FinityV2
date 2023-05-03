@@ -1153,12 +1153,16 @@ function finity.new(themename, gprojectName, thinProject)
 								end)
 								button.MouseButton1Click:Connect(function()
 									if cheat.dropped then
-										for i,v in pairs(cheat.value) do
+										local valueExists = false
+										for i, v in ipairs(cheat.value) do
 											if v == value then
-												table.remove(cheat.value, value)
-											else
-												table.insert(cheat.value, value)
+												table.remove(cheat.value, i)
+												valueExists = true
+												break
 											end
+										end
+										if not valueExists then
+											table.insert(cheat.value, value)
 										end
 										local texitii = ""
 										for i,v in pairs(cheat.value) do
