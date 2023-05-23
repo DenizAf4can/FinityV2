@@ -1125,7 +1125,7 @@ function finity.new(themename, gprojectName, thinProject)
 							Font = Enum.Font.Gotham,
 							Text = "None",
 							TextColor3 = theme.dropdown_text,
-							TextSize = 5,
+							TextSize = 13,
 							TextXAlignment = Enum.TextXAlignment.Left,
 							TextScaled = true
 						})
