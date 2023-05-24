@@ -200,7 +200,7 @@ finity.dark_theme = { -- dark
 	scrollbar_color = Color3.fromRGB(118, 118, 121),
 }
 finity.very_dark_theme = { -- very dark
-	main_container = Color3.fromRGB(22, 22, 22),
+	main_container = Color3.fromRGB(16, 16, 16),
 	main_containerimage = "",
 	separator_color = Color3.fromRGB(63, 63, 65),
 
