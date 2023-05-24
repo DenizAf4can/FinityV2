@@ -200,7 +200,7 @@ finity.dark_theme = { -- dark
 	scrollbar_color = Color3.fromRGB(118, 118, 121),
 }
 finity.very_dark_theme = { -- very dark
-	main_container = Color3.fromRGB(16, 16, 16),
+	main_container = Color3.fromRGB(22, 22, 22),
 	main_containerimage = "",
 	separator_color = Color3.fromRGB(63, 63, 65),
 
@@ -1122,12 +1122,11 @@ function finity.new(themename, gprojectName, thinProject)
 							Position = UDim2.new(0, 10, 0, 0),
 							Size = UDim2.new(1, -35, 1, 0),
 							ZIndex = 2,
+							TextScaled = true,
 							Font = Enum.Font.Gotham,
 							Text = "None",
 							TextColor3 = theme.dropdown_text,
-							TextSize = 13,
-							TextXAlignment = Enum.TextXAlignment.Left,
-							TextScaled = true
+							TextXAlignment = Enum.TextXAlignment.Left
 						})
 
 						cheat.list = finity:Create("ScrollingFrame", {
