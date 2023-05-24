@@ -437,7 +437,7 @@ function finity.new(themename, gprojectName, thinProject)
 		return
 	end
 
-	local theme = finity.light_theme
+	local theme = finity.dark_theme
 	local projectName = false
 	local thinMenu = false
 	local toggledKey = Enum.KeyCode.End
@@ -1123,6 +1123,8 @@ function finity.new(themename, gprojectName, thinProject)
 							Size = UDim2.new(1, -35, 1, 0),
 							ZIndex = 2,
 							TextScaled = true,
+							TextSize = 14,
+							TextWrapped = true,
 							Font = Enum.Font.Gotham,
 							Text = "None",
 							TextColor3 = theme.dropdown_text,
