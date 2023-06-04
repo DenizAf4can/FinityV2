@@ -580,9 +580,9 @@ function finity.new(themename, gprojectName, thinProject)
 	})
 	
 	if projectName then
-		self2.tip.Text = projectName.." | Press ' End ' to hide this menu"
+		self2.tip.Text = projectName.." | Press ' LeftShift ' to hide this menu"
 	else
-		self2.tip.Text = "Press ' End ' to hide this menu"
+		self2.tip.Text = "Press ' LeftShift ' to hide this menu"
 	end
     
     function finity.settitle(text)
